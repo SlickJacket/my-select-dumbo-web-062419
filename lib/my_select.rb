@@ -1,20 +1,17 @@
 nums = [1, 2, 3, 4, 5]
 
-def my_select(collection)
-  newArray = []
-
-  i=0
-  while i < collection.length
-  newArray.push yield(collection[i])
-  i += 1
-end
-
-  neArray.compact
-end
-
-
-my_select(nums) do |x| 
-  if x.even?
-    num
+def my_select(array)
+  i =0
+  select = []
+  while i < array.length
+    if (yield(array[i]))
+      select << array[i]
+    end
+    i += 1
   end
+  select 
+end
+
+my_select(nums) do |num|
+  num.even?
 end
